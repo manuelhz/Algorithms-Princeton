@@ -1,0 +1,61 @@
+1) Which value is associated with the key \verb#Hello#Hello after executing the following code fragment:
+
+ST<String, Integer> st = new ST<String, Integer>();
+st.put("Hello", 12);
+st.put("World", 21);
+st.put("Hello", 49);
+
+a)12
+=>b)49
+Correct
+The ST API specifies that put() overwrites the old value with the new value when called on a key already in the symbol table.
+c)Both 12 and 49
+d)Either 12 or 49, depending on the implementation
+
+2) What is the maximum number of array accesses needed to search for a key in a symbol table that is implemented with a sorted array?
+
+a)constant
+->b)logarithmic
+Correct
+Use binary search.
+c)linear
+d)linearithmic
+
+3) What is the maximum number of compares to determine the rank of a key in a symbol table that is implemented using a sorted array?
+a)constant
+->b)logarithmic
+Correct
+Use binary search.
+c)linear
+d)linearithmic
+
+4) Suppose that nn distinct keys are inserted into a binary search tree in random order. What is the expected number of compares to search for one of the nn keys?
+
+a)constant
+->b)logarithmic
+Correct
+As stated in lecture, the expected number of compares is ∼2ln(n).
+c)linear
+d)linearithmic
+
+5) A BST is uniquely defined by its level-order traversal, a breadth-first traversal where the root is visited first, then all nodes at depth 1 (going from left to right), then all nodes at depth 2 (going from left to right), and so forth. What is the level-order traversal of the BST drawn below?
+(.... bst.jpg ....)
+
+
+a)A C E H M P R S X
+b)A C H P M E S X R
+c)R E C A M H P X S
+->d)R E X C M S A H P
+Correct
+Note: To code up a level-order traversal, you would use a queue instead of a (function-call) stack.
+
+6) What is the order of growth of the expected height of a binary search tree with n keys after a long intermixed sequence of random insertions and random Hibbard deletions?
+
+
+a)logn
+->b)sqrt{n}
+Correct
+The main defect of Hibbard deletion is that it unbalances the tree, leading to sqrt(n) height.
+If instead of replacing the node to delete with its successor, you flip a coin and replace it with either its successor or predecessor, then, in practice, the height becomes logarithmic (but nobody has been able to prove this fact mathematically).
+c)n
+d)nlogn

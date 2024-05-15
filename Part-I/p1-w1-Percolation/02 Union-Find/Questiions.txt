@@ -1,0 +1,71 @@
+1)How many connected components result after performing the following sequence of union operations on a set of  10  items?
+
+1–2 3–4 5–6 7–8 7–9 2–8 0–5 1–9
+
+a)1
+
+b)2
+
+->c)3
+Correct
+The connected components are {0,5,6}, {3,4}, and {1,2,7,8,9}.
+
+d)4
+
+2)What is the maximum number of id[] array entries that can change (from one value to a different value) during one call to union when using the quick-find data structure on n elements?
+
+
+a)1
+Not all entries change. For example, id[q] does not change.
+b)lgn
+->c)n−1
+In the worst case, all of the entries except id[q] are changed from id[p] to id[q].
+d)n
+
+3) Suppose that in a quick-union data structure on 10 elements that the id[] array is
+
+i       0  1  2  3  4  5  6  7  8  9
+-------------------------------------
+id[i]   0  9  6  5  4  2  6  1  0  5
+
+Which are the roots of 3 and 7, respectively?
+
+a)3 and 7
+
+
+b)4 and 4
+
+
+c)6 and 4
+
+
+->d)6 and 6
+Correct
+The root of 3 is 6: 3→5→2→6.
+The root of 7 is 6: 7→1→9→5→2→6.
+
+4)Consider the maximum number of array accesses during a find operation when using the quick-union data structure on n elements. How does this quantity grow as function of n?
+
+a)constant
+b)logarithmic
+->c)linear
+d)quadratic
+
+5)Suppose that the id[] array during the weighted quick-union (by size) algorithm is given as below. Which id[] entry changes when we apply the union operation to 3 and 6?
+a)id[0]
+Be careful not to confuse union-by-size with union-by-height. The former uses the size of the tree (number of nodes) while the latter uses the height of the tree (number of links on longest path from the root of the tree to a leaf node). Both variants guarantee logarithmic height.
+b)id[3]
+3 is not a root node, so id[3] will not change.
+c)id[6]
+->d)id[8]
+Correct
+In weighted quick-union (by size), we make the root of the smaller tree (in terms of the number of nodes) point to the root of the larger tree. So, in this example, the algorithm sets id[8] = 0.
+
+6)When opening one new site in the percolation simulation, how many times is union() called?
+
+
+->a)0, 1, 2, 3, or 4
+It is called for each neighboring site that is already open. There are 4 possible neighbors, but some of them may not already be open.
+b)1, 2, 3, or 4
+c)2, 3, or 4
+d)4

@@ -1,0 +1,28 @@
+1.
+Question 1
+Monotonic shortest path. Given an edge-weighted digraph G, design an ElogE algorithm to find a monotonic shortest path from s to every other vertex. A path is monotonic if the sequence of edge weights along the path are either strictly increasing or strictly decreasing.
+
+run Dijkstra twice admitting only increasing/decreasing weights each time.
+https://www.geeksforgeeks.org/monotonic-shortest-path-from-source-to-destination-in-directed-weighted-graph/
+Hint: relax edges in ascending order to find a best monotonically increasing path; relax edges in descending order to find a best monotonically decreasing path.
+
+2.
+Question 2
+Second shortest path. Given an edge-weighted digraph and let P be a shortest path from vertex s to vertex t. Design an ElogV algorithm to find a path (not necessarily simple) other than P from s to t that is as short as possible. Assume all of the edge weights are strictly positive.
+
+use Dijkstra to find shortest path, remove edges of the shortest path, use Dijkstra to find a second path.
+https://www.lavivienpost.com/shortest-path-and-2nd-shortest-path-using-dijkstra-code/
+https://en.wikipedia.org/wiki/K_shortest_path_routing#Algorithm
+https://stackoverflow.com/questions/4971850/which-algorithm-can-i-use-to-find-the-next-to-shortest-path-in-a-graph#:~:text=To%20find%20second%20shortest%20path,from%20each%20vertex%20to%20t%20.
+
+Hint: compute the shortest path distances from s to every vertex and the shortest path distances from every vertex to t.
+
+3.
+Question 3
+Shortest path with one skippable edge. Given an edge-weighted digraph, design an ElogV algorithm to find a shortest path from s to t where you can change the weight of any one edge to zero. Assume the edge weights are nonnegative.
+
+https://stackoverflow.com/questions/16291676/shortest-path-with-one-skippable-edge
+
+Hint: compute the shortest path from ss to every vertex; compute the shortest path from every vertex to tt; combine.
+
+

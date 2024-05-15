@@ -1,0 +1,42 @@
+1)What is the expected running time of randomized quicksort to sort an array of nn distinct keys when the array is already sorted?
+
+a)linear
+->b)linearithmic
+c)quadratic
+d)exponential
+
+2)What is the expected running time to find the median of an array of nn distinct keys using randomized quickselect?
+
+a)constant
+->b)linear
+c)linearithmic
+d)quadratic
+
+Using 3-way partitioning with quicksort is most effective when the input array has which of the following properties?
+
+a)all items distinct
+->b)a few distinct items
+c)items in strictly increasing order
+d)items in strictly decreasing order
+
+3)Why does Arrays.sort() in Java use mergesort instead of quicksort when sorting reference types ?
+
+
+a)stability
+b)nlogn guaranteed performance
+
+->c)both A and B
+Correct
+The Java API for Arrays.sort() for reference types requires that it is stable and guarantees nlogn performance. Neither of these are properties of standard quicksort.
+
+Quicksort uses less memory and is faster in practice on typical inputs (and is typically used by Arrays.sort() when sorting primitive types, where stability is not relevant).
+
+d)neither A nor B
+
+4)Why does Arrays.sort() in Java use quicksort instead of mergesort when sorting primitive types ?
+a)uses less memory on typical inputs
+b)faster on typical inputs
+->c)both A and B
+Correct
+Quicksort is in-place and is typically the fastest general-purpose sorting algorithm in practice.
+d)neither A nor B

@@ -1,0 +1,39 @@
+1) Suppose that you implement a set using a red–black BST. Which of the following operations cannot be implemented in logarithmic time (or better) in the worst case?
+
+
+a) add an element to the set (if it is not already in the set)
+b) does the set contain a given element?
+->c) return the set of all elements contained in two given sets
+Correct
+Computing the intersection of two sets takes time proportional to the size of the smaller set (since we need to iterate over all elements in the smaller set and check whether they are contained in the large set). Note also that computing the intersection takes extra space proportional to the size of the intersection.
+d)remove an element from the set (if it is in the set).
+
+2)Among the following symbol-table implementations, which would be most suitable for use in the LookupCSV client? Assume that the Key type implements the compareTo(), equals(), and hashCode() methods.
+
+
+a)unordered array
+b)ordered linked list
+c)binary search tree
+->d)linear-probing hash table
+Correct
+Ordered operations (such as rank and ordered iteration) are not needed, so a hash table is probably most suitable.
+
+3) Suppose that you are creating a book index which contains a set of keywords and there is a set of page numbers associated with each keyword (the pages on which the keyword appears). Which data type below would be the best choice to represent the book index?
+
+
+a) ST<Integer, SET<String>>
+b) ST<String, SET<Integer>>
+Correct
+Use a symbol table, where the key is the keyword (a String) and the value is the set of pages on which the keyword appears (a SET<Integer>). If the symbol table is implemented with a red–black BST, then the keywords and page numbers will appear in sorted order.
+c) SET<ST<Integer, String>>
+d) SET<ST<String, Integer>>
+Incorrect
+The data type ST does not implement the Comparable interface so you cannot use it as the key type in a SET.
+
+3) Consider an n-by-n matrix A such that each row has 5 nonzero entries. Suppose that you represent A using a sparse matrix (each row is represented as a sparse vector). What is the running time of multiplying the matrix A with a dense vector x of length n?
+->a)n
+Correct
+It takes constant time to compute the dot product of x with a row of A. This must be done for each of the n rows of A (so it is linear).
+b)nlogn
+c)n^2 
+d)n^3

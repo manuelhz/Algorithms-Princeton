@@ -1,0 +1,16 @@
+    public Point2D nearest(Point2D p) {
+        if(p == null)
+            throw new IllegalArgumentException("trying to insert a null value");
+        return nearest(root, p, root.key);
+    }
+
+    private Point2D nearest(Node x, Point2D p, Point2D nearest) {
+        if(x.key.distanceSquaredTo(p) < nearest.distanceSquaredTo(p))
+            nearest = x.key;
+        if(x.left != null && p.distanceSquaredTo(nearest) >= x.left.recthv.distanceSquaredTo(p))
+            nearest = nearest(x.left, p, nearest);
+        if(x.right != null && p.distanceSquaredTo(nearest) >= x.right.recthv.distanceSquaredTo(p))
+            nearest = nearest(x.right, p, nearest);
+
+        return nearest;
+    }
