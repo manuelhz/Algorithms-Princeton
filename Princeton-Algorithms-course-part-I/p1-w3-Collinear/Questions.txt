@@ -1,0 +1,45 @@
+1)How many compares does mergesort—the pure version without any optimizations—make to sort an input array that is already sorted?
+a)constant
+b)logarithmic
+c)linear
+->d)linearithmic
+Correct
+
+It makes ∼ (1/2)nlog(⁡2)n compares, which is the best case for mergesort. We note that the optimized version that checks whether a[mid]≤a[mid+1] requires only n−1 compares.
+
+2)How many passes (over the input array) does bottom-up mergesort make in the worst case?
+
+a)constant
+->b)logarithmic
+c)linear
+d)linearithmic
+
+3)Under which of the following scenarios does the Nlg⁡N lower bound for sorting apply? Assume that the keys are accessed only through the compareTo() method unless otherwise specified.
+
+a)five distinct keys
+->b)no two keys are equal
+c)keys in descending order
+d)keys are strings and accessed via charAt() instead of compareTo()
+
+4)Which of the following is a compelling reason to implement the Comparator interface instead of the Comparable interface in Java?
+
+a)easier to use Comparator with Arrays.sort()
+
+->b)Comparator supports multiple orderings of a given data type
+
+c)easier to implement a total order with Comparator than Comparable
+
+d)All of the above
+
+5)Given an array of points, which of the following approaches would be least useful for removing duplicate points? Assume the point data type has the following three orders:
+
+     i)A natural order that compares by x-coordinate and breaks ties by y-coordinate.
+     ii)One comparator that compares by x-coordinate; another by y-coordiante.
+Note: quicksort is an efficient, but unstable, sorting algorithm.
+
+a)quicksort by the natural order
+b)quicksort by x-coordinate; mergesort by y-coordinate
+->c)mergesort by x-coordinate; quicksort by y-coordinate
+Correct
+Since quicksort is not stable, if you mergesort by x-coordinate and then quicksort by y-coordinate, there is no guarantee that equal points will be adjacent in the sorted order.
+d)mergesort by x-coordinate; mergesort by y-coordinate

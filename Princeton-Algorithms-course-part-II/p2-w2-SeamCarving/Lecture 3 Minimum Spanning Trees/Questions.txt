@@ -1,0 +1,109 @@
+1) Let G be a connected, edge-weighted graph with V vertices and E edges. How many edges are in a minimum spanning tree of G?
+
+
+-> a) V-1
+Correct
+If a subgraph had fewer than V−1 edges, then it cannot be connected; if a subgraph has more than V−1 edges, it must have a cycle.
+
+b) V
+c) E-1
+d) E
+
+2) Consider the cut {2, 3, 6}. Which is the minimum weight edge crossing the cut?
+
+(mst.jpg)
+
+a) 0–7 ; (0.16)
+
+b) 2–3 ; (0.17)
+
+-> c) 0-2 ; (0.26)
+Correct
+Neither the edge 0–7 nor the edge 2–3 crosses the cut.
+
+d) 1–2 ; (0.36)
+
+3) Let G be a connected graph with distinct edge weights. Given any cut of G, the crossing edge of ____________________ is in MST.
+
+->a) minimum weight
+Correct
+
+b) average
+
+c) median weight
+
+d) maximum weight
+
+4) How many distinct Edge objects are there in the adjacency-lists representation of an edge-weighted graph with V vertices and E edges?
+
+
+a) V
+
+->b) E
+Correct
+There is one Edge object for each edge in the graph. The adjacency lists contain two references to each Edge but there is still only one Edge object per graph edge.
+
+c) V + E
+
+d) 2E
+
+
+5) Given a connected graph G with positive edge weights, which of the following algorithm(s) will compute an MST of G?
+
+a) Change the weight of each edge from w_e to w_e + 17 and compute an MST of the resulting edge-weighted graph.
+b) Change the weight of each edge from w_e to 17*w_e and compute an MST of the resulting edge-weighted graph.
+c) Change the weight of each edge from w_e to (w_e)^2 and compute an MST of the resulting edge-weighted graph.
+->d) All of the above.
+Correct
+Kruskal's algorithm only accesses the edge weights via pairwise comparisons. For each edge-weight transformation below, the relative order of the edge weights does not change.
+
+6) Suppose that you are running the lazy version of Prim's algorithm and that the edges added to the MST so far are 0–7, 1–7, and 0–2. What are the keys on the priority queue immediately after 0–2 is added?
+
+(mst-prim.jpg)
+
+a) 0.17 0.26 0.28 0.29 0.38 0.40
+Incorrect
+The priority queue contains all of the edges that cross the cut, including 6–0.
+
+b) 0.17 0.28 0.29 0.38 0.40
+
+c) 0.17 0.28 0.29 0.32 0.37 0.38 0.58
+
+d) 0.17 0.28 0.29 0.32 0.34 0.36 0.37 0.38 0.40 0.58
+
+7) Suppose that you are running the eager version of Prim's algorithm and that the edges added to the MST so far are 0–7, 1–7, and 0–2. What are the keys on the priority queue?
+
+(mst-prim-eager.jpg)
+
+a) 0.28 0.29 0.37 0.40
+Incorrect
+For each non-tree vertex v, the eager version of Prim's algorithm maintains at most one entry in the priority queue (with key equal to the weight of the cheapest edge from v to the tree). This includes edge 2–3.
+
+->b) 0.17 0.28 0.37 0.40
+Correct
+For each non-tree vertex v, the eager version of Prim's algorithm maintains at most one entry in the priority queue (with key equal to the weight of the cheapest edge from v to the tree).
+
+c) 0.17 0.28 0.29 0.32 0.37 0.38 0.40 0.58
+Incorrect
+For each non-tree vertex v, the eager version of Prim's algorithm maintains at most one entry in the priority queue (with key equal to the weight of the cheapest edge from v to the tree). So, it would not include both edge 1–3 and 2–3.
+
+d) 0.17 0.28 0.29 0.32 0.34 0.36 0.37 0.38 0.40
+
+8) What is the order of growth of the worst-case running time of Prim's algorithm using a binary heap?
+
+a) V
+b) E
+-> c) E*log(V)
+Correct
+See slide 60.
+d) (E^2)log(V)
+
+9) Finding the MST of a set of n points in the plane (where the weight of an edge between two vertices equals the Euclidean distance between the two points) can be solved in  ________________ time. Choose the best answer.
+
+a) n
+->b) nlogn
+Correct
+See slide 64. Achieving this running time involves using some advanced geometric algorithms and data structures, such as the Delaunay triangulation.
+
+c) n^2
+d) (n^2)log(n)

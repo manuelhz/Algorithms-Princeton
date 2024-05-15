@@ -1,0 +1,57 @@
+1)What is the expected number of array accesses and compares, respectively, to insert a random key into an ordered-array implementation of a priority queue?
+
+a)logarithmic and logarithmic
+Incorrect
+Often, the number of array accesses and the number of compares have the same order of growth, but not here.
+b)logarithmic and linear
+->c)linear and logarithmic
+Correct
+We can use binary search to find the insertion point using a logarithmic number of compares. On average, the key to be inserted must be placed in the middle of the array—to keep the array in order, we must shift over all larger keys.
+d)linear and linear
+
+
+2)Which of the following arrays does not represent a max-oriented binary heap?
+
+1)19 18 17 16 15 14 13 12 11 10#19 18 17 16 15 14 13 12 11 10
+2)10 10 10 10 10 10 10 10 10 10#10 10 10 10 10 10 10 10 10 10
+3)34 30 29 27 25 17 16 19 22 24#34 30 29 27 25 17 16 19 22 24
+->4(30 27 23 17 16 15 13 14 18 11#30 27 23 17 16 15 13 14 18 11
+Correct
+In the corresponding binary tree, 17 is a parent of 18, which violates the heap-order property.
+
+3)Suppose that an array a[] is a max-heap that contains the distinct integer keys 1,2,…,N with N≥7. The key N must be in a[1] and the key N−1 must be in either a[2] or a[3]. Where must the key N−2 be?
+
+
+a)2 or 3
+b)4, 5, 6, or 7
+->c)2, 3, 4, 5, 6, or 7
+correct!
+d)1, 2, 3, 4, 5, 6, or 7
+
+4) what is an algorithm guaranteed nlogn? hipsort is the answer.
+
+5) why is heapsort no thar much used in practice?
+the inner loop is longer than quicksort, there are more things to do in the inner loop (like merge sort). 2 compares to get done in nlogn time andf there is arrange array aritmetic.
+The other thing that is probably more significant on modern machines is. That the references to memory are all over the place when it's a huge array, so it's not a good algorithm for a situation where there's caching which is almost everywhere nowadays. It doesn't have a local reference, like Quicksort does. It's always refers to something that's nearby something else that I just referred to. So if a big block of things comes into memory, there's no more extra costs, whereas Heapsort is going to look far away from the current place as it goes down the tree and that makes it slower in a lot of situations (makes poor use of cache memory).
+And the last thing is that it is not stable.
+
+6) How many compares does bottom-up (sink-based) heap construction perform in the worst case when sorting an array of n keys?
+
+a)constant
+b)logarithmic
+->c)linear
+Correct
+As stated in lecture, the bottom-up version of heapsort makes ~2n compares in the worst case. For a proof of this fact, see Exercise 2.4.20.(https://algs4.cs.princeton.edu/24pq/index.php#Ex2.4.20)
+d)linearithmic
+Incorrect
+Inserting n keys one-at-a-time into a binary heap would require a linearithmic number of compares. The bottom-up construction has a superior worst-case running time.
+
+7)How many priority-queue operations are performed for each collision in the worst case?
+
+a)constant
+b)logarithmic
+->c)linear
+Correct
+In the worst case, each of the two colliding particle might be predicted to collide with each of the other particles (and two walls). In practice, the number of priority queue operations will be much much smaller.
+c)quadratic
+
